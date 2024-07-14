@@ -1,0 +1,20 @@
+<!-- index.wxml 注释和 html 注释风格一致 -->
+<!-- 
+  1、wxml 其实是 weixin markup language 的简写翻译过来 微信标记语言，也就是小程序页面的结构文件
+  2、结构文件里面存在很多的标签（组件）
+    2.1 view就是小程序页面结构使用的标签（组件），类似 html 中的 div 块元素
+    2.2 button
+    2.3 text
+    2.4 image
+-->
+<!-- navigator 导航组件，类似 a -->
+<!-- url 参数跳转页面地址 /绝对路径 -->
+<navigator url="/pages/test/test?id=1&form=index">前往test页面，去看生命周期函数的指向情况</navigator>
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    Weixin
+    <view>123</view>
+    <view>456</view>
+  </view>
+</scroll-view>

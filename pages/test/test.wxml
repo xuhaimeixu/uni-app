@@ -1,0 +1,68 @@
+<!--pages/test/test.wxml-->
+<!-- 
+  text 类似 html 里面的 span 行内元素
+  https://developers.weixin.qq.com/miniprogram/dev/component/text.html
+  当我们创建好一个页面后，如何去模拟器里面查看我们的页面呢？
+  方式1：基于 app.json 文件 里面的 pages 进行配置
+   "pages": [
+      "pages/index/index",
+      "pages/test/test"
+    ],
+  方式2：基于调试模式实现
+  1、结构（组件完成 view text）
+  2、样式（wxss样式文件，这里可以使用web开发页面里面的 css 语法去写页面的样式）
+  3、行为（js代码）交互模式，需求：点击按钮，弹出一个提示信息(web onclick alert)
+  微信小程序没有传统的 dom 开发模式，基于我们的 vuejs react 这类数据驱动开发模式，无需 dom 操作。
+
+  bindtap 用于做时间绑定，类似 onclick
+
+  tapHandler 回调函数，定义在页面的 .js 文件里面
+
+  4、数据使用插值表达式进行显示
+    4.1 基本数据的显示
+    4.2 可以完成四则运算
+    4.3 可以完成条件判断
+    4.4 三目、三元
+    4.5 ECMAScript 相关的 api 不生效
+    4.6 .js 文件里面定义的方法
+    4.7 数据的响应式变化 setData this.data.xxx
+
+  5、 页面的生命周期函数
+
+  6、全局数据 globalData 本地缓存，基于 mobx
+  https://developers.weixin.qq.com/community/develop/article/doc/0004686e3c8980b53469f176e51413
+
+  7、小程序可以使用 npm 包
+
+  8、根据设计稿实现页面开发
+ -->
+<view>{{ title }}</view>
+<view>{{ n }}</view>
+<view>{{ m }}</view>
+<view>
+  m + n = {{ m + n }}
+</view>
+<view>
+  m - n = {{ m - n }}
+</view>
+<view>
+  {{ m > n }}
+</view>
+<view>
+  {{ age >= 18 ? '已经成年了' : '未成年' }}
+</view>
+<view>
+  {{ parseInt(11.23) }}
+</view>
+<view>
+  age: {{ age }}
+</view>
+<view>
+  希望点击按钮后 age 增加 +1
+</view>
+<text>123</text>
+<text>456</text>
+<view>
+  789
+</view>
+<button type="primary" size="mini" bindtap="tapHandler">按钮</button>
